@@ -20,7 +20,6 @@ class App extends HTMLElement {
 
   #root: ShadowRoot
   #storeListener: Parameters<typeof addListener>[1]
-  #startTime: number = 0
 
   constructor() {
     super()
@@ -32,9 +31,6 @@ class App extends HTMLElement {
     style.textContent = cssContent
 
     shadowRoot.append(style, template.content.cloneNode(true))
-    shadowRoot.addEventListener('WantedPosterLoaded', () => {
-      this.#removeLoading()
-    })
 
     const posterSlot =
       this.#root.querySelector<HTMLSlotElement>('slot[name=poster]')
@@ -68,25 +64,6 @@ class App extends HTMLElement {
           this.#setWantedPosterAttributes({ [key]: value.toString() })
       }
     }
-  }
-
-  #removeLoading() {
-    const loadingOverlay =
-      this.#root.querySelector<HTMLElement>('.loading-overlay')!
-
-    const minLoadingTime = 1000
-    const intervalId = setInterval(() => {
-      const time = new Date().getTime()
-      if (time - this.#startTime < minLoadingTime) {
-        return
-      }
-
-      clearTimeout(intervalId)
-      loadingOverlay.style.transition = 'opacity 1s'
-      loadingOverlay.style.opacity = '0'
-
-      setTimeout(() => loadingOverlay.remove(), 1000)
-    }, 200)
   }
 
   #setWantedPosterAttributes(attributes: WantedPosterAttribute) {

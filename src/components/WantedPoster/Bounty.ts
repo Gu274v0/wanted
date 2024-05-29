@@ -48,13 +48,13 @@ class Bounty extends Text {
       return
     }
 
-    this.ctx.font = `700 ${this.fontSize}px 'Vertiky`
+    this.ctx.font = `700 ${this.fontSize}px 'Scheherazade New', serif`
     const actualHeight = this.getTextActualHeight(this.formattedText)
     const scale = this.height / actualHeight
     const offsetY = (actualHeight - this.height) / 2
     this.ctx.font = `700 ${Math.floor(
       this.fontSize * scale
-    )}px 'Vertiky`
+    )}px 'Scheherazade New', serif`
 
     this.ctx.letterSpacing = "4px"
 
