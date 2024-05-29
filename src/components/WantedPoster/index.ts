@@ -107,7 +107,9 @@ class WantedPoster extends HTMLElement {
     console.log('[connected]')
 
     await new Promise((resolve) => {
-      setTimeout(() => resolve(''))
+      setTimeout(() => {
+        resolve('')
+      }, 100);
     })
 
     this.#status = 'loading'
