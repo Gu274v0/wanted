@@ -1,4 +1,5 @@
 import 'iconify-icon'
+import './components/LuffyLogo'
 import './components/WantedButton'
 import './components/ConditionSelect'
 import './components/IconButton'
