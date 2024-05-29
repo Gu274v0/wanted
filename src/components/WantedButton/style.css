@@ -1,0 +1,94 @@
+:host {
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+  filter: contrast(100%) brightness(100%)
+    drop-shadow(1px 1px 1px rgb(0 0 0 / 50%))
+    drop-shadow(-1px -1px 1px rgb(0 0 0 / 50%));
+  transition: 0.05s;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  width: 4.25rem;
+  height: 5rem;
+}
+
+:host(:hover:not([loading])) {
+  filter: contrast(105%) brightness(105%)
+    drop-shadow(1px 4px 3px rgb(0 0 0 / 50%))
+    drop-shadow(-1px 0 3px rgb(0 0 0 / 50%));
+}
+
+:host(:active:not([loading])) {
+  transform: translateY(1px);
+  filter: contrast(105%) brightness(105%)
+    drop-shadow(1px 2px 1px rgb(0 0 0 / 60%))
+    drop-shadow(-1px 0 1px rgb(0 0 0 / 60%));
+}
+
+.img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.icon {
+  display: flex;
+  position: absolute;
+  top: 21%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 82%;
+  height: 44%;
+  color: rgb(81 55 33);
+  font-size: 1.5rem;
+}
+
+iconify-icon {
+  display: none;
+}
+
+:host([loading]) {
+  cursor: wait;
+}
+
+:host([loading]) iconify-icon {
+  display: inline;
+}
+
+.text-upper {
+  display: flex;
+  position: absolute;
+  bottom: 76%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 85%;
+  height: 20%;
+  overflow: hidden;
+  color: rgb(81 55 33);
+  font-weight: 900;
+  font-size: 0.6rem;
+  font-family: 'Scheherazade New', serif;
+  text-align: justify;
+  white-space: nowrap;
+}
+
+.text {
+  display: flex;
+  position: absolute;
+  bottom: 12%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 85%;
+  height: 20%;
+  overflow: hidden;
+  color: rgb(81 55 33);
+  font-weight: 900;
+  font-size: 0.7rem;
+  font-family: 'Scheherazade New', serif;
+  text-align: justify;
+  white-space: nowrap;
+}

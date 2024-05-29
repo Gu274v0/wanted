@@ -1,0 +1,23 @@
+<input id="uploadInput" type="file" accept="image/*">
+<slot name="poster"></slot>
+
+<div class="button-container">
+  <wanted-button id="editButton" aria-label="Edit panel button" title="Open the edit panel.">
+    <iconify-icon slot="icon" icon="fluent-mdl2:edit-photo"></iconify-icon>
+    EDITAR
+  </wanted-button>
+
+  <wanted-button id="importButton" aria-label="Import button" title="Import local image to edit.">
+    <iconify-icon slot="icon" icon="uil:image-upload"></iconify-icon>
+    IMPORTAR
+  </wanted-button>
+
+  <wanted-button id="exportButton" aria-label="Export button" title="Export as image file.">
+    <iconify-icon slot="icon" icon="uil:image-download"></iconify-icon>
+    EXPORTAR
+  </wanted-button>
+</div>
+
+<slot></slot>
+
+<edit-panel></edit-panel>
