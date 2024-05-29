@@ -108,8 +108,10 @@ class WantedPoster extends HTMLElement {
 
     await new Promise((resolve) => {
       setTimeout(() => {
+        document.getElementsByTagName("body")[0].style.display = "none"
+        document.getElementsByTagName("body")[0].style.display = "block"
         resolve('')
-      }, 100);
+      });
     })
 
     this.#status = 'loading'
