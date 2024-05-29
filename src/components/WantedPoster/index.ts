@@ -105,17 +105,15 @@ class WantedPoster extends HTMLElement {
 
   async connectedCallback() {
     console.log('[connected]')
+    document.getElementsByTagName("body")[0].style.display = "none"
 
     await new Promise((resolve) => {
-      setTimeout(() => {
-        document.getElementsByTagName("body")[0].style.display = "none"
-        resolve('')
-      });
-
-      setTimeout(() => {
-        document.getElementsByTagName("body")[0].style.display = "block"
-      }, 100);
+      setTimeout(() => resolve(''));
     })
+
+    setTimeout(() => {
+      document.getElementsByTagName("body")[0].style.display = "block"
+    }, 1000);
 
     this.#status = 'loading'
 
